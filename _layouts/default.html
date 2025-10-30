@@ -6,23 +6,58 @@
   <title>{{ page.title | escape }}</title>
   <meta name="description" content="{{ page.description | escape }}" />
 
-  <!-- JSON-LD Schema for BlogPosting -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "{{ page.title | escape }}",
-    "description": "{{ page.description | escape }}",
-    "author": { "@type": "Person", "name": "Greg Grinman" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Under 510",
-      "url": "https://www.under510.com"
-    },
-    "datePublished": "{{ page.date | date: "%Y-%m-%d" }}",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | absolute_url }}" }
-  }
-  </script>
+  {% assign blogpost = 
+    {
+      "@context":"https://schema.org",
+      "@type":"BlogPosting",
+      "headline": page.title,
+      "description": page.description,
+      "author": { "@type":"Person", "name":"Greg Grinman" },
+      "publisher": { "@type":"Organization", "name":"Under 510", "url":"https://www.under510.com" },
+      "datePublished": page.date | date_to_xmlschema,
+      "mainEntityOfPage": { "@type":"WebPage", "@id": site.url | append: site.baseurl | append: page.url }
+    } 
+  %}
+
+  {% if page.canonical_url %}
+    {% assign blogpost = blogpost | merge: { "url": page.canonical_url } %}
+  {% endif %}
+
+  {% if page.image %}
+    {% assign blogpost = blogpost | merge: { "image": page.image } %}
+  {% endif %}
+
+  {% if page.keywords %}
+    {% assign blogpost = blogpost | merge: { "keywords": page.keywords } %}
+  {% endif %}
+
+  {% if page.articleSection %}
+    {% assign blogpost = blogpost | merge: { "articleSection": page.articleSection } %}
+  {% endif %}
+
+  {% if page.inLanguage %}
+    {% assign blogpost = blogpost | merge: { "inLanguage": page.inLanguage } %}
+  {% endif %}
+
+  {% if page.dateModified %}
+    {% assign blogpost = blogpost | merge: { "dateModified": page.dateModified | date_to_xmlschema } %}
+  {% endif %}
+
+  {% if page.author_url %}
+    {% assign author_obj = blogpost.author | merge: { "url": page.author_url } %}
+    {% assign blogpost = blogpost | merge: { "author": author_obj } %}
+  {% endif %}
+
+  {% if page.publisher_logo %}
+    {% assign publisher_obj = blogpost.publisher | merge: { "logo": page.publisher_logo } %}
+    {% assign blogpost = blogpost | merge: { "publisher": publisher_obj } %}
+  {% endif %}
+
+  <script type="application/ld+json">{{ blogpost | jsonify }}</script>
+
+  {% if page.canonical_url %}
+    <link rel="canonical" href="{{ page.canonical_url }}">
+  {% endif %}
 
   <style>
     body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,Arial,sans-serif}
@@ -35,4 +70,3 @@
   </article>
 </body>
 </html>
-
