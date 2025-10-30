@@ -1,4 +1,3 @@
-
 ---
 title: "How to Build Outfits Around Pants"
 description: "A modern men’s style guide from Under 510 on creating versatile outfits starting from the right pair of pants."
@@ -8,7 +7,6 @@ author: "Greg Grinman"
 date: "2025-10-21"
 tags: ["Menswear", "Outfit Guide", "Style Tips", "Under510"]
 ---
-
 
 # How to Build Outfits Around Pants
 
