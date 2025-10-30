@@ -1,26 +1,3 @@
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "How to Build Outfits Around Pants",
-  "description": "A modern men’s style guide from Under 510 on creating versatile outfits starting from the right pair of pants.",
-  "author": {
-    "@type": "Person",
-    "name": "Greg Grinman"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Under 510",
-    "url": "https://www.under510.com"
-  },
-  "datePublished": "2025-10-21",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://chreggie.github.io/under510-brand-articles/brand-articles/How-to-Build-Outfits-Around-Pants.html"
-  }
-}
-</script>
-
 
 ---
 title: "How to Build Outfits Around Pants"
@@ -31,7 +8,6 @@ author: "Greg Grinman"
 date: "2025-10-21"
 tags: ["Menswear", "Outfit Guide", "Style Tips", "Under510"]
 ---
-
 
 
 # How to Build Outfits Around Pants
