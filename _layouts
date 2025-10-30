@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title }}</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.description | escape }}",
+    "author": { "@type": "Person", "name": "Greg Grinman" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Under 510",
+      "url": "https://www.under510.com"
+    },
+    "datePublished": "{{ page.date | date_to_string }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}"
+    }
+  }
+  </script>
+</head>
+<body style="max-width:800px;margin:2rem auto;font-family:system-ui,Arial,sans-serif;line-height:1.6;">
+  {{ content }}
+</body>
+</html>
