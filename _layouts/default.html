@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ page.title | escape }}</title>
+  <meta name="description" content="{{ page.description | escape }}" />
+
+  <!-- JSON-LD Schema for BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.description | escape }}",
+    "author": { "@type": "Person", "name": "Greg Grinman" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Under 510",
+      "url": "https://www.under510.com"
+    },
+    "datePublished": "{{ page.date | date: "%Y-%m-%d" }}",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ page.url | absolute_url }}" }
+  }
+  </script>
+
+  <style>
+    body{max-width:800px;margin:2rem auto;padding:0 1rem;font:16px/1.6 system-ui,Arial,sans-serif}
+    img{max-width:100%;height:auto}
+  </style>
+</head>
+<body>
+  <article>
+    {{ content }}
+  </article>
+</body>
+</html>
+
+Create layout with JSON-LD schema
