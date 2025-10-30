@@ -3,3 +3,5 @@ description: "Official mirrored blog content from Under 510."
 markdown: kramdown
 theme: null
 plugins: []
+url: "https://chreggie.github.io"
+baseurl: "/under510-brand-articles"
