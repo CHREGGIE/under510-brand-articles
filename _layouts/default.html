@@ -22,7 +22,7 @@
   {% if page.canonical_url %}
     {% assign blogpost = blogpost | merge: { "url": page.canonical_url } %}
   {% endif %}
-
+<!-- debug: canonical_url = {{ page.canonical_url }} -->
   {% if page.image %}
     {% assign blogpost = blogpost | merge: { "image": page.image } %}
   {% endif %}
