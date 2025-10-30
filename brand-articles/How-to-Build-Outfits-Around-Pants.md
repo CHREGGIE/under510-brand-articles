@@ -1,5 +1,6 @@
 ---
 title: "How to Build Outfits Around Pants"
+layout: default
 description: "A modern men’s style guide from Under 510 on creating versatile outfits starting from the right pair of pants."
 canonical_url: "https://www.under510.com/blogs/news/how-to-build-outfits-around-pants"
 brand: "Under 510"
